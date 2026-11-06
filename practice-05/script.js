@@ -4,31 +4,13 @@ Vue.createApp({
     return {
       score: 75,
       standards: [{
-          min: 70,
-          max: 101,
-          range: "80〜100%",
-          grade: "☔",
-          status: "雨",
-          color: "☔",
-          advice: "雨が降る可能性が高いです。大きめの傘を持っていくといきましょう。"
-        },
-        {
-          min: 50,
-          max: 70,
-          range: "50～70%",
-          grade: "🌧",
-          status: "曇り～雨",
-          color: "🌧",
-          advice: "雨が降る可能性があります。傘があると安心です。"
-        },
-        {
-          min: 30,
-          max: 50,
-          range: "30～50%",
-          grade: "☁",
-          status: "曇り",
-          color: "☁",
-          advice: "急な雨に備えて折りたたみ傘があると安心です。"
+          min: 0,
+          max: 10,
+          range: "0〜10%",
+          grade: "🌞",
+          status: "晴れ",
+          color: "🌞",
+          advice: "傘は基本的に必要ありません。安心して外出できるでしょう。"
         },
         {
           min: 10,
@@ -40,14 +22,32 @@ Vue.createApp({
           advice: "雨が降る可能性は低いですが心配なら折り畳み傘をもっていきましょう。"
         },
         {
-          min: 0,
-          max: 10,
-          range: "0〜10%",
-          grade: "🌞",
-          status: "晴れ",
-          color: "🌞",
-          advice: "傘は基本的に必要ありません。安心して外出できるでしょう。"
-        }
+          min: 30,
+          max: 50,
+          range: "30～50%",
+          grade: "☁",
+          status: "曇り",
+          color: "☁",
+          advice: "急な雨に備えて折りたたみ傘があると安心です。"
+        },
+        {
+          min: 50,
+          max: 70,
+          range: "50～70%",
+          grade: "🌧",
+          status: "曇り～雨",
+          color: "🌧",
+          advice: "雨が降る可能性があります。傘があると安心です。"
+        },
+        {
+          min: 70,
+          max: 101,
+          range: "80〜100%",
+          grade: "☔",
+          status: "雨",
+          color: "☔",
+          advice: "雨が降る可能性が高いです。大きめの傘を持っていくといきましょう。"
+        },
       ]
     };
   },
@@ -75,7 +75,7 @@ Vue.createApp({
     differenceMessage() {
       const difference = 60 - this.score;
 
-      if(difference > 0) {
+      if (difference > 0) {
         return `合格ラインまであと${difference}点です`;
       }
 
